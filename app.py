@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 from src.data_loader import load_bitcoin_data, add_block_reward_features, create_turkey_data
 from src.benchmark_data import get_benchmark_dataframe, BENCHMARK_RESULTS
 from src.metrics import evaluate_preds
-from src.models_torch import NaiveModel
+from src.models_tf import NaiveModel
 
 # Page configuration
 st.set_page_config(
@@ -91,7 +91,7 @@ nav_choice = st.sidebar.radio(
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
 **Key Technologies:**
-- PyTorch 2.14 / TensorFlow
+- TensorFlow 2.x / Keras
 - Pandas & NumPy
 - Plotly & Streamlit
 - N-BEATS Deep Architecture

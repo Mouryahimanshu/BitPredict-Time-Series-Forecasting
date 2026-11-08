@@ -1,7 +1,8 @@
 # 📈 BitPredict: Deep Learning Time Series Forecasting for Bitcoin
 
-[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.14-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000?logo=keras&logoColor=white)](https://keras.io/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Interactive%20App-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -152,7 +153,7 @@ streamlit run app.py
 Time/
 ├── milestone-project-3-time-series-forecasting.ipynb  # Original experimental notebook
 ├── app.py                                              # Interactive Streamlit dashboard
-├── train.py                                            # PyTorch training & evaluation CLI
+├── train.py                                            # TensorFlow training & evaluation CLI
 ├── requirements.txt                                    # Python dependencies
 ├── LICENSE                                             # MIT License
 ├── README.md                                           # Comprehensive documentation
@@ -171,9 +172,9 @@ Time/
     ├── __init__.py
     ├── data_loader.py       # Data loading, halving features, Turkey generator
     ├── windowing.py         # Temporal split & sliding window transforms
-    ├── metrics.py           # Pure NumPy MAE, MSE, RMSE, MAPE, MASE
+    ├── metrics.py           # Pure NumPy / TF MAE, MSE, RMSE, MAPE, MASE
     ├── benchmark_data.py    # Benchmark results table and metadata
-    └── models_torch.py      # PyTorch Dense, Conv1D, LSTM, N-BEATS, Ensemble
+    └── models_tf.py         # TensorFlow 2 / Keras Dense, Conv1D, LSTM, N-BEATS, Ensemble
 ```
 
 ---
@@ -205,17 +206,17 @@ pip install -r requirements.txt
 # Evaluate Naive baseline
 python train.py --model naive --window 7 --horizon 1
 
-# Train PyTorch Dense forecaster
-python train.py --model dense --window 7 --horizon 1 --epochs 30
+# Train TensorFlow Dense forecaster
+python train.py --model dense --window 7 --horizon 1 --epochs 100
 
-# Train PyTorch Conv1D forecaster
-python train.py --model conv1d --window 7 --horizon 1 --epochs 30
+# Train TensorFlow Causal Conv1D forecaster
+python train.py --model conv1d --window 7 --horizon 1 --epochs 100
 
-# Train PyTorch LSTM forecaster
-python train.py --model lstm --window 7 --horizon 1 --epochs 30
+# Train TensorFlow LSTM forecaster
+python train.py --model lstm --window 7 --horizon 1 --epochs 100
 
-# Train PyTorch N-BEATS model
-python train.py --model nbeats --window 7 --horizon 1 --epochs 30
+# Train TensorFlow N-BEATS model
+python train.py --model nbeats --window 7 --horizon 1 --epochs 100
 ```
 
 ### 5. Launch the Web Application
