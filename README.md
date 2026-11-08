@@ -182,7 +182,7 @@ Time/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/BitPredict-Time-Series-Forecasting.git
+git clone https://github.com/Mouryahimanshu/BitPredict-Time-Series-Forecasting.git
 cd BitPredict-Time-Series-Forecasting
 ```
 
